@@ -106,42 +106,23 @@ public void Lrotation(Object[] arr){
 	for(int i=n-1;i>0; i--)
 		arr[i]=arr[i-1];
 	arr[0]=last;
-		
-	
-}
-
-public boolean insert(Object[] arr, Object ele){
-	return true;
-	
-	
-	
 }
 
 
-public boolean delete(Object[] arr,Object ele){
-	return true;
-	
-	
-}
-
-
-public Object searchInSortedArray(Object[] arr){
-	return null;
-	
-}
-
-public Object insertInSortedArray(Object[] arr,Object ele){
-return null;	
-	
-}
-
-public Boolean deleteInSortedArray(Object[] arr,Object ele){
-return true;
-	
-}
-
-public void genSubArray(Object[] arr){
-	
+public void genSubArray(Object[] arr,int start, int end){
+	int n= arr.length;
+	if(end==arr.length)
+		return;
+	if(start>end)
+		genSubArray(arr,0,end+1);
+	else{
+	System.out.print("[");
+	for(int i=start;i<=end;i++){
+		System.out.print(arr[i]+",");
+	}
+	System.out.print("]\n");
+	genSubArray(arr,start+1,end);
+	}
 	
 	
 }
@@ -152,10 +133,11 @@ public static void main(String[] args){
 	Object arr1[]={1,2,3,4,5,6,7};
 	//Object val=opr.bSearch(arr,"Ram ji");
 	//System.out.println(val);
-	opr.Lrotation(arr);
-    for(Object rev:arr){
-		System.out.println(rev);
-	}
+	//opr.Lrotation(arr);
+    //for(Object rev:arr){
+		//System.out.println(rev);
+	//}
+	opr.genSubArray(arr1,0,0);
 }
 
 
