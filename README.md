@@ -1,4 +1,5 @@
 <h>AllSorting Algorithms</n><br>
+<p> these are the basic algorith on array</p>
 Thanks
 
 ###
