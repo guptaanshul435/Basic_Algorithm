@@ -2,20 +2,26 @@ class AllSort implements SpacificationOfSort{
 
 // insertion sort  O(n^2)
 public void insSort(int[] arr){
+	// iterate for all the elements
 	for(int i=0;i<arr.length;i++){    //n   O(n)
-		
+		// every element take out and int key and chacking the right place for that
 		int key=arr[i];
 		int m=i-1;
+		// shifting all the element one step head, which are greater the key and placing key on the right place
 		while(m>=0 && arr[m]>key){   //n*allmost n  == O(n^2)
 			arr[m+1]=arr[m];
 			--m;
 		}
+		// inserting key on its correct place
 	arr[m+1]=key;
 	}
 }
 
 // Selection Sort
+// 
 public void selSort(int[] arr){
+	
+	// find min from i to n and put on the place of i and going on until i reach n-1 because last element would be on its right place
 	int n=arr.length;
 	for(int i=0;i<n-1;i++){           // n
 		int min=i;
@@ -49,7 +55,7 @@ public void bubbleSort(int[] arr){
 
 
 // Quick sort
-public void quickSort(int[] arr,int low,int high)
+public void quickSort(int[] arr,int low,int high)  //best O(nlogn)  worst O(n^2)
 {
 	
 	if(low<high){
@@ -65,10 +71,10 @@ public void quickSort(int[] arr,int low,int high)
 
 
 // partition
-private int partition(int[] arr,int low, int high){
+private int partition(int[] arr,int low, int high){    //O(nlogn)
 	// choosing the pivot
 	int pivot=arr[high];
-	// index of smaller element and indicates
+	// index of smaller element in indicates
 	int i=(low-1);
 	for(int j=low;j<high;j++){
 		if(arr[j]<pivot){
@@ -79,8 +85,6 @@ private int partition(int[] arr,int low, int high){
 	swap(i+1,high,arr);
 	return i+1;
 }
-
-
 //MergeSort
 public void mergeSort(int[] arr,int l,int r){
 	
@@ -94,19 +98,14 @@ public void mergeSort(int[] arr,int l,int r){
 		merge(arr,l,m,r);	
 	}
 }
-
 private void merge(int[] arr, int low,int mid,int high){
-
 // first of all we will take the length for low to mid and mid to high for creating temparary array
-
 // because we are going to have data length of 
 int n1=mid-low+1;
 int n2=high-mid;
-
 //create two temp array
 int L[]=new int[n1];
 int R[]=new int[n2];
-
 // copy the data to temp array
 for(int i=0;i<n1;i++){
 L[i]=arr[low+i];
@@ -114,14 +113,10 @@ L[i]=arr[low+i];
 for(int j=0;j<n2;j++){
 R[j]=arr[mid+1+j];
 }	
-
 //intialilise the indexs of the first and second array
-
 int i=0,j=0;
-
 //intial index of the merge subarray
 int k=low;
-
 while(i<n1 && j<n2){
 	if(L[i]<=R[j]){
 		arr[k]=L[i];
@@ -132,7 +127,6 @@ while(i<n1 && j<n2){
 	}
 	k++;
 }	
-
 //copy remainig elements of L[] if any
 while(i<n1){
 	arr[k]=L[i];
@@ -148,11 +142,9 @@ while(j<n2){
 
 }
 public void print(int[] arr){
-	
 	for(int i:arr){
 		System.out.println(i);
 	}
-	
 }
 
 public static void main(String args[]){
