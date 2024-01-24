@@ -12,8 +12,14 @@ interface LinkedListCRUD{
 	 public void bacTravers();
 	 
 	 
-	 //update
+	 //insAtPosition
 	 public boolean insAtPosition(int position,Object ele);
+	 
+	 // update at postion
+	 
+	 public boolean updateAtPostition(int position,Object ele);
+	 
+	 
 	 
 	 
 	 //Delete
