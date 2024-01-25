@@ -21,6 +21,9 @@ interface Queue{
    
    // Is Queue full
    public boolean isQueueFull();
+   
+   //Is queue empty
+   public boolean isQueueEmpty();
 
 }
 
@@ -91,7 +94,7 @@ class QueueImpl implements Queue{
 
 // poll the element in the queue
    public Object poll(){
-	   if(front==-1){
+	   if(isQueueEmpty()){
 		   System.out.println("Queue is empty");
 		   return null;
 	   }else{
@@ -102,6 +105,19 @@ class QueueImpl implements Queue{
 
 // remove the element from the the queue
    public Object remove(){
+	   if(isQueueEmpty()){
+		   System.out.println("Queue is empty");
+	   }else{
+		   Object ele=queue[front];
+		   if(front==rear){
+			   ele=queue[front];
+			   front=rear=-1;
+			   //System.out.println("Queue is empty");
+		   }else{
+			   front=(front+1)%cap;
+		   }
+		  return ele; 
+	   }
 	   return null;
    }
    
@@ -112,6 +128,19 @@ class QueueImpl implements Queue{
 	   }
 	   return false;
    }
+   
+   public boolean isQueueEmpty(){
+	   if(front==-1){
+		   return true;
+	   }else{
+		   return false;
+	   }
+   }
+   
+   
+    
+   
+   
 }
 
 public class MainQueue{
@@ -127,14 +156,16 @@ public class MainQueue{
 		//System.out.println(queue.add("ram ram ji"));
 		//System.out.println(queue.add("ram"));
 		//System.out.println(queue.element());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
-		System.out.println(queue.poll());
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
+		//System.out.println(queue.poll());
 		//System.out.println(queue.element());
 		
 	}
