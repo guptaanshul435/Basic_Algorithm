@@ -1,22 +1,5 @@
 // stack data structure in java using Linked List
-interface Stack{
-	//push operation
-  public Object push(Object ele);
-  
-  
-  //pop operation
-  public Object pop();
-  
-  //find top ele in stack
-  public Object peek();
-  
-  
-  // Empty stack
-  public boolean empty();
-  
-  // search 
-  public Object search(Object ele);
-}
+
 
 class StackImpl implements Stack{
 	//private int cap=10
