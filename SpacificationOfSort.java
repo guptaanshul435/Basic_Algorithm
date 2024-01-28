@@ -19,6 +19,10 @@ public void quickSort(int[] arr,int low,int high);
 public void mergeSort(int[] arr,int low,int high);
 
 
+// heapSort
+public void heapSort(int[] arr);
+
+
 //Print
 
 public void print(int[] arr);
