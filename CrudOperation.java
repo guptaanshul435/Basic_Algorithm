@@ -2,7 +2,7 @@ interface CrudOperation{
 
 
 // insert 
-public Object insert();
+public Object insert(BinaryTreeNode root,BinaryTreeNode newNode);
 
 
 
