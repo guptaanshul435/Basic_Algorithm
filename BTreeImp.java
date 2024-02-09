@@ -44,36 +44,41 @@ public BinaryTreeNode getRoot(){
 
 
 
-// updare
-public boolean update(Object prehold, Object newValue){
-	
-	
-	return true;
-}
+//postOrder
 
-
-
-//read 
-public void read(BinaryTreeNode bRoot){
+public void postOrder(BinaryTreeNode bRoot){
 	temp=bRoot;
 	if(temp!=null){
-		if(temp.left!=null)
-		 read(temp.left);	
-		
-	  System.out.print(bRoot.ele+",");
-	  if(temp.right!=null)
-	    read(temp.right);
+		postOrder(temp.left);
+		postOrder(temp.right);
+		System.out.println(temp.ele);
 	}
 	
 }
 
 
-//delete
 
-public void delete(Object ele){
-	
-	
+//read 
+public void inOrder(BinaryTreeNode bRoot){
+	temp=bRoot;
+	if(temp!=null){
+		if(temp.left!=null)
+	      inOrder(temp.left);	
+	  System.out.print(bRoot.ele+",");
+	    if(temp.right!=null)
+	      inOrder(temp.right);
+	}
 	
 }
 
+
+// preOrder
+public void preOrder(BinaryTreeNode bRoot){
+	temp=bRoot;
+	if(temp!=null){
+		System.out.println(temp.ele);
+		preOrder(temp.left);
+		preOrder(temp.right);
+	}
+}
 }

@@ -6,17 +6,17 @@ public Object insert(BinaryTreeNode root,BinaryTreeNode newNode);
 
 
 
-// updare
-public boolean update(Object prehold, Object newValue);
+// preOrder
+public void preOrder(BinaryTreeNode root);
 
 
 
-//read 
-public void read(BinaryTreeNode root);
+//inOrder
+public void inOrder(BinaryTreeNode root);
 
 
-//delete
+//postOrder
 
-public void delete(Object ele);
+public void postOrder(BinaryTreeNode root);
 
 }

@@ -10,7 +10,7 @@ public static void main(String[] args){
 	}
 	
 	
-	bTreeImp.read(root);
+	bTreeImp.inOrder(root);
 	
 	
 }
