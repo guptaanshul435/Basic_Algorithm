@@ -1,6 +1,5 @@
-<h>AllSorting Algorithms</n><br>
-<p> these are the basic algorith on array</p>
-Thanks
+<h>Practice on DSA</n><br>
+<p> Here we have impleented all the data structures and some algorithms</p>
 
-###
-<p> Here we have all compare based sorting algorithms </P>
+
+Thanks,
